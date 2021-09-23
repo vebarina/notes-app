@@ -1,0 +1,13 @@
+.nav-bar {
+  background: var(--light-purple);
+  top: 0;
+  height: 50px;
+}
+
+h1 {
+  color: var(--dark-grey);
+  font-size: 30px;
+  font-weight: 600;
+  padding-top: 10px;
+  font-family: "Azeret Mono", monospace;
+}

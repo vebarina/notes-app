@@ -1,0 +1,18 @@
+.heading .add-btn {
+  background: var(--light-purple);
+  border: solid 2px var(--dark-purple);
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgb(116 101 177 / 75%);
+  color: var(--dark-purple);
+  font-weight: 400;
+  font-size: 15px;
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  padding-left: 3px;
+  padding-bottom: 2px;
+}
+
+.heading .add-btn:hover {
+  background: var(--super-light-purple);
+}
