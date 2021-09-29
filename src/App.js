@@ -6,14 +6,14 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
 function App() {
-  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes') || "[]"));
-  const [searchQuery, setSearchQuery] = useState('');
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes") || "[]"));
+  const [searchQuery, setSearchQuery] = useState("");
   
   function addNote() {
     const note = {
       id: uuidv4(),
-      title: '',
-      body: '',
+      title: "",
+      body: "",
     }
    const updatedNotes = [note, ...notes];
    setNotes(updatedNotes);
@@ -45,11 +45,11 @@ function App() {
       return false;
   }
 
-  const filteredNotes = (searchQuery === '') ? notes : notes
+  const filteredNotes = (searchQuery === "") ? notes : notes
     .filter(filterPredicate);
 
   useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
+    localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   return (
