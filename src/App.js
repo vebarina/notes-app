@@ -10,15 +10,20 @@ function App() {
     JSON.parse(localStorage.getItem("notes") || "[]")
   );
   const [searchQuery, setSearchQuery] = useState("");
+  const [notesLimit, setNotesLimit] = useState(false);
 
   function addNote() {
-    const note = {
-      id: uuidv4(),
-      title: "",
-      body: "",
-    };
-    const updatedNotes = [note, ...notes];
-    setNotes(updatedNotes);
+    if (notes.length >= 30) {
+      setNotesLimit(true);
+    } else {
+      const note = {
+        id: uuidv4(),
+        title: "",
+        body: "",
+      };
+      const updatedNotes = [note, ...notes];
+      setNotes(updatedNotes);
+    }
   }
 
   function updateNote(note) {
@@ -36,6 +41,7 @@ function App() {
   function deleteNote(note) {
     const updatedNotes = notes.filter((n) => n.id !== note.id);
     setNotes(updatedNotes);
+    setNotesLimit(false);
   }
 
   function filterPredicate(note) {
@@ -53,6 +59,9 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
+    if (notes.length >= 30) {
+      setNotesLimit(true);
+    }
   }, [notes]);
 
   return (
@@ -62,6 +71,7 @@ function App() {
         addNote={addNote}
         searchNote={setSearchQuery}
         value={searchQuery}
+        notesLimit={notesLimit}
       />
       {notes.length ? (
         <Notes
