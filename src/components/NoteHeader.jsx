@@ -2,15 +2,15 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../styles/heading.css";
+import "../styles/note-header.css";
 
-function Heading(props) {
+function NoteHeader(props) {
   const { addNote, searchNote, notesLimit } = props;
   const toastModal = () =>
     toast("Sorry! You have reached the maximum number of notes.");
 
   return (
-    <div className="heading" title="heading">
+    <div className="note-header" title="note-header">
       <SearchBar searchNote={searchNote} />
       <button className="add-btn" onClick={notesLimit ? toastModal : addNote}>
         + Add Note
@@ -20,4 +20,4 @@ function Heading(props) {
   );
 }
 
-export default Heading;
+export default NoteHeader;

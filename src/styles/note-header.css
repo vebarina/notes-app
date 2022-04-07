@@ -1,4 +1,4 @@
-.heading .add-btn {
+.note-header .add-btn {
   background: var(--light-purple);
   border: solid 2px var(--dark-purple);
   border-radius: 5px;
@@ -13,6 +13,6 @@
   padding-bottom: 2px;
 }
 
-.heading .add-btn:hover {
+.note-header .add-btn:hover {
   background: var(--super-light-purple);
 }

@@ -7,8 +7,10 @@ function MockNotes(notes, deleteNote, updateNote) {
   );
 }
 
-test("Should render notes component on the screen", () => {
-  render(<MockNotes />);
-  const notesComponent = screen.getByTestId("notes-test");
-  expect(notesComponent).toBeInTheDocument();
+describe("Notes", () => {
+  test("Should render notes component on the screen", () => {
+    render(<MockNotes />);
+    const notesComponent = screen.getByTestId("notes-test");
+    expect(notesComponent).toBeInTheDocument();
+  });
 });

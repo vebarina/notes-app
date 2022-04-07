@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import Notes from "./components/Notes";
-import Heading from "./components/Heading";
+import NoteHeader from "./components/NoteHeader";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
@@ -66,8 +66,8 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <Heading
+      <Header />
+      <NoteHeader
         addNote={addNote}
         searchNote={setSearchQuery}
         value={searchQuery}
