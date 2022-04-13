@@ -35,4 +35,14 @@ describe("Note", () => {
     });
     expect(bodyInputElement.value).toBe("apples, bananas");
   });
+
+  test("Should show delete button when hovering over note", () => {
+    render(<MockNote />);
+    const note = screen.getByTestId("note-test");
+    fireEvent.mouseOver(note);
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeVisible();
+  });
+
+  // TODO: add test to check if item is removed when clicking delete button
 });

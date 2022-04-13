@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Notes from "../components/Notes";
 
 function MockNotes(notes, deleteNote, updateNote) {

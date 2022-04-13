@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import NoteHeader from "../components/NoteHeader";
 
 describe("NoteHeader", () => {
@@ -10,7 +10,16 @@ describe("NoteHeader", () => {
 
   test("Should render button", () => {
     render(<NoteHeader />);
-    const btnElement = screen.getByRole("button");
-    expect(btnElement).toBeInTheDocument();
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeInTheDocument();
+  });
+
+  test("Button should change background color when hovering over and out", () => {
+    render(<NoteHeader />);
+    const buttonElement = screen.getByRole("button");
+    fireEvent.mouseOver(buttonElement);
+    expect(buttonElement).toHaveStyle("background: var(--super-light-purple)");
+    fireEvent.mouseOut(buttonElement);
+    expect(buttonElement).toHaveStyle("background: var(--light-purple)");
   });
 });

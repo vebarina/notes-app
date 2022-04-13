@@ -43,7 +43,11 @@ function Note(props) {
           placeholder="Note title"
         />
         {onHover && (
-          <button className="delete-btn" onClick={() => deleteNote(note)}>
+          <button
+            className="delete-btn"
+            aria-label="Delete"
+            onClick={() => deleteNote(note)}
+          >
             X
           </button>
         )}
